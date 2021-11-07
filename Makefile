@@ -68,7 +68,7 @@ $(EXT_NAME).zip: $(DIST_FILES)
 define generate-icon-rule
 $1: $(1:%-$(lastword $(subst -, ,$1))=%.svg)
 	size=$(lastword $(subst -, ,$(basename $1))); \
-	    $(INKSCAPE) -w $$$${size} -h $$$${size} -e $$@ $$<
+	    $(INKSCAPE) -w $$$${size} -h $$$${size} -o $$@ $$<
 endef
 
 $(foreach icon,$(BITMAP_ICONS),$(eval $(call generate-icon-rule,$(icon))))
