@@ -3,12 +3,12 @@
     "name": "__MSG_extensionName__",
     "version": "@VERSION@",
     "description": "__MSG_extensionDescription__",
-    "author": "Guido Berhoerster",
-    "homepage_url": "https://code.guido-berhoerster.org/addons/firefox-addons/set-aside/",
+    "author": "Tim Schumacher",
+    "homepage_url": "https://github.com/timschumi/firefox-set-aside/",
     "default_locale": "en",
     "applications": {
         "gecko": {
-            "id": "set-aside@code.guido-berhoerster.org",
+            "id": "set-aside@timschumi.net",
             "strict_min_version": "60.0"
         }
     },

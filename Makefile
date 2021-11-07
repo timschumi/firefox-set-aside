@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2018 Guido Berhoerster <guido+set-aside@berhoerster.name>
+# Copyright (C) 2021 Tim Schumacher <timschumi@gmx.de>
 #
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the
@@ -40,7 +41,6 @@ BITMAP_ICONS =	icons/set-aside-16.png \
 		icons/set-aside-sidebar-16.png \
 		icons/set-aside-sidebar-32.png
 DIST_FILES =	COPYING \
-		NEWS \
 		README \
 		background.js \
 		manifest.json \

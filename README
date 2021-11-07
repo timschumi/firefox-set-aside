@@ -29,12 +29,6 @@ Pressing the cross button above the tab thumbnails will remove all tabs
 belonging to the collection.  Pressing the cross button on a tab thumbnail
 will remove that particular tab from the collection.
 
-Contact
--------
-
-Please send any feedback, translations or bug reports via email to
-<guido+set-aside@berhoerster.name>
-
 Bug Reports
 -----------
 
@@ -46,10 +40,10 @@ reproduce the issue and include any error messages.
 License
 -------
 
-Except otherwise noted, all files are Copyright (C) 2018 Guido Berhoerster and
-distributed under the following license terms:
+Except otherwise noted, all files are distributed under the following license terms:
 
 Copyright (C) 2018 Guido Berhoerster <guido+set-aside@berhoerster.name>
+Copyright (C) 2021 Tim Schumacher <timschumi@gmx.de>
 
 This Source Code Form is subject to the terms of the Mozilla Public
 License, v. 2.0. If a copy of the MPL was not distributed with this
