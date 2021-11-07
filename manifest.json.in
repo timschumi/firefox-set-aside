@@ -6,7 +6,7 @@
     "author": "Tim Schumacher",
     "homepage_url": "https://github.com/timschumi/firefox-set-aside/",
     "default_locale": "en",
-    "applications": {
+    "browser_specific_settings": {
         "gecko": {
             "id": "set-aside@timschumi.net",
             "strict_min_version": "62.0"
