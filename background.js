@@ -357,7 +357,6 @@ class TabCollectionsStorageProxy {
             tabProperties.discarded = true;
         }
         await browser.tabs.create(tabProperties);
-        await this.removeTab(tabCollectionUuid, tabUuid);
     }
 
     async removeTabCollection(tabCollectionUuid) {
@@ -382,7 +381,6 @@ class TabCollectionsStorageProxy {
                     url: tab.url
                 }, tabProperties)));
         await Promise.all(creatingTabs);
-        await this.removeTabCollection(tabCollectionUuid);
     }
 
     async updateTabData(tabCollectionUuid) {
