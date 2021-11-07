@@ -256,8 +256,7 @@ class TabCollectionsStorageProxy {
             pinned:false
         });
 
-        // sanity check to prevent saving tabs from incognito windows
-        if (browserTabs.length === 0 || browserTabs[0].incognito) {
+        if (browserTabs.length === 0) {
             return;
         }
 
@@ -524,26 +523,7 @@ browser.menus.create({
     title: browser.i18n.getMessage('showTabsMenuItem')
 });
 
-// disable the browser action for incognito tabs
-browser.tabs.onCreated.addListener(tab => {
-    if (tab.incognito) {
-        console.log('created, disabling');
-        browser.browserAction.disable(tab.id);
-    }
-});
-browser.tabs.onUpdated.addListener((tabId, details, tab) => {
-    if (tab.incognito) {
-        console.log('updated, disabling');
-        browser.browserAction.disable(tabId);
-    }
-});
-
 (async () => {
-    // disable the browser action for existing incognito tabs
-    let tabs = await browser.tabs.query({});
-    await Promise.all(tabs.filter(tab => tab.incognito)
-            .map(tab => browser.browserAction.disable(tab.id)))
-
     tabCollectionsProxy = new TabCollectionsStorageProxy();
     await tabCollectionsProxy.init();
 

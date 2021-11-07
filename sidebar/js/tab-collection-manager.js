@@ -257,13 +257,6 @@ class TabManager {
 }
 
 browser.windows.getCurrent().then(currentWindow => {
-    // disable the sidebar for incognito windows
-    if (currentWindow.incognito) {
-        document.querySelector('#message').textContent =
-                browser.i18n.getMessage('incognitoModeMessage');
-        return;
-    }
-
     function throttleResize(type, name, obj) {
         obj = obj || window;
         var isRunning = false;
