@@ -1,0 +1,52 @@
+{
+    "extensionName": {
+        "message": "Set Aside",
+        "description": "Name of the extension."
+    },
+    "extensionDescription": {
+        "message": "Set open tabs aside in a collection and restore them later.",
+        "description": "Description of the extension."
+    },
+    "defaultBrowserActionTitle": {
+        "message": "Set these Tabs aside",
+        "description": "Title of the browser action button."
+    },
+    "defaultSidebarTitle": {
+        "message": "Tabs You've Set Aside",
+        "description": "Title of the sidebar action."
+    },
+    "showTabsMenuItem": {
+        "message": "Show Tabs You've Set Aside",
+        "description": "Title of the menu item for opening the sidebar action for managing tabs which were set aside."
+    },
+    "emptySidebarMessage": {
+        "message": "Nothing here yet",
+        "description": "Message shown in the sidebar if there are no tab collections yet."
+    },
+    "collectionTitle": {
+        "message": "$NUMBER$ Tab(s)",
+        "description": "Title of the collection containing the number of tabs, the number placholder may refer to one or more tabs.",
+        "placeholders": {
+            "number": {
+                "content": "$1",
+                "example": "42"
+            }
+        }
+    },
+    "restoreTabsButtonTitle": {
+        "message": "Restore Tabs",
+        "description": "Title of the button for restoring a tab collection."
+    },
+    "removeTabsButtonTitle": {
+        "message": "Remove Tabs",
+        "description": "Title of the button for removing a tab collection."
+    },
+    "removeTabTitle": {
+        "message": "Remove Tab",
+        "description": "Title of the button for removing a tab from a collection."
+    },
+    "incognitoModeMessage": {
+        "message": "Private Browsing",
+        "description": "Message shown in the sidebar when in incognito mode."
+    }
+}

@@ -1,0 +1,56 @@
+Set Aside
+=========
+
+Set Aside is a Firefox Addon which can quickly set aside open tabs from the
+current window and restore them later.
+
+Usage
+-----
+
+Press the extension's button in the tab bar in order to set all currently open
+tabs aside.  Note that tabs which are set aside are closed, this may lead to a
+loss of data if e.g. there is unsubmitted form data.  Tabs with privileged
+protocols such as file:, moz-extension:, or about: cannot be set aside and
+will be left open because the extension would not be able to open them again
+due to browser security policy.
+
+Tabs which were set aside can be managed via the sidebar which shows the
+collections of tabs in the order of creation, including the number of tabs
+belonging to the collection, its creation date and time, as well as thumbnail
+previews of each tab.  Thumbnail previews are not available for tabs which had
+been discarded before being set aside or tabs synced from another device.
+
+Clicking on "Restore Tabs" will restore all tabs of the collection in the
+current window and subsequently remove the collection from the sidebar.
+Clicking on a tab thumbnail will restore that particular tab and subsequently
+remove it from the collection.
+
+Pressing the cross button above the tab thumbnails will remove all tabs
+belonging to the collection.  Pressing the cross button on a tab thumbnail
+will remove that particular tab from the collection.
+
+Contact
+-------
+
+Please send any feedback, translations or bug reports via email to
+<guido+set-aside@berhoerster.name>
+
+Bug Reports
+-----------
+
+When sending bug reports, please always mention the exact version of the addon
+with which the issue occurs as well as the version of Firefox and the operating
+system you are using and make sure that you provide sufficient information to
+reproduce the issue and include any error messages.
+
+License
+-------
+
+Except otherwise noted, all files are Copyright (C) 2018 Guido Berhoerster and
+distributed under the following license terms:
+
+Copyright (C) 2018 Guido Berhoerster <guido+set-aside@berhoerster.name>
+
+This Source Code Form is subject to the terms of the Mozilla Public
+License, v. 2.0. If a copy of the MPL was not distributed with this
+file, You can obtain one at http://mozilla.org/MPL/2.0/.

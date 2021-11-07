@@ -1,0 +1,245 @@
+/*
+ * Copyright (C) 2018 Guido Berhoerster <guido+set-aside@berhoerster.name>
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ */
+
+@import url("chrome://browser/content/extension.css");
+@import url("photon-colors.css");
+
+:root {
+  --box-shadow-border: inset 0 0 0 1px var(--grey-90-a10);
+  --button-highlight-color: var(--grey-90-a10);
+  --secondary-text-color: var(--grey-50);
+  --font-size-display-20: 36px;
+  --font-size-title-20: 17px;
+  --font-size-body-20: 15px;
+  --font-size-body-10: 13px;
+
+  --scroll-button-image-width: 24px;
+  --scroll-button-image-height: var(--scroll-button-image-width);
+  --scroll-button-padding: 4px;
+  --scroll-button-width: calc(2 * var(--scroll-button-padding) +
+      var(--scroll-button-image-width));
+  --scroll-button-height: var(--scroll-button-width);
+  --scroll-button-highlight: var(--grey-90-a10);
+
+  --thumbnail-width: 224px;
+  --thumbnail-height: 128px;
+  --thumbnail-shadow: var(--box-shadow-border), 0 1px 4px var(--grey-90-a30);
+  --thumbnail-shadow-highlight: var(--thumbnail-shadow),
+      0 0 0 5px var(--grey-30);
+
+  --remove-tab-collection-image-width: 16px;
+  --remove-tab-collection-image-height:
+      var(--remove-tab-collection-image-width);
+  --remove-tab-collection-padding: 2px;
+  --remove-tab-collection-width: calc(2 * var(--remove-tab-collection-padding) +
+      var(--remove-tab-collection-image-width));
+  --remove-tab-collection-height: var(--remove-tab-collection-width);
+
+  --favicon-image-width: 32px;
+  --favicon-padding: 4px;
+  --favicon-width: calc(2 * var(--favicon-padding) +
+      var(--favicon-image-width));
+  --favicon-height: var(--favicon-width);
+  --favicon-overlap: 6px;
+
+  --remove-tab-image-width: 16px;
+  --remove-tab-image-height: var(--remove-tab-image-width);
+  --remove-tab-padding: 4px;
+  --remove-tab-width: calc(var(--remove-tab-padding) * 2 +
+      var(--remove-tab-image-width));
+  --remove-tab-height: var(--remove-tab-width);
+  --remove-tab-overlap: calc(var(--remove-tab-width) / 2);
+}
+
+:any-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-size: var(--font-size-body-20);
+  font-weight: 400;
+}
+
+figure {
+  margin: 0;
+}
+
+#message {
+  margin-top: 1em;
+  color: var(--secondary-text-color);
+  font-size: var(--font-size-display-20);
+  font-weight: 300;
+  text-align: center;
+}
+
+#tab-collections:not(:empty) ~ #message {
+  display: none;
+}
+
+#tab-collections {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-collection {
+  margin: 16px 0;
+}
+
+.tab-collection-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin: 4px;
+}
+
+.tab-collection-title {
+  font-size: var(--font-size-title-20);
+  font-weight: 500;
+}
+
+.tab-collection-title,
+.tab-collection-ctime {
+  white-space: nowrap;
+  margin: 0 0 0 6px;
+}
+
+.tab-collection-ctime {
+  font-size: var(--font-size-body-10);
+  color: var(--secondary-text-color);
+}
+
+.tab-collection-actions,
+.tab-collection-tabs {
+  display: flex;
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.tab-collection-actions {
+  font-size: var(--font-size-body-10);
+  justify-content: flex-end;
+  white-space: nowrap;
+  margin: 4px 8px;
+  align-items: center;
+}
+
+.tab-collection-actions > li + li {
+  margin-left: 8px;
+}
+
+.remove-tab-collection {
+  width: var(--remove-tab-collection-width);
+  height: var(--remove-tab-collection-height);
+  background: url(../images/remove.svg) var(--remove-tab-collection-padding)/var(--remove-tab-collection-image-width) no-repeat;
+  border-radius: 2px;
+}
+
+.remove-tab-collection:hover {
+  background-color: var(--grey-90-a10);
+}
+
+.restore-tab-collection {
+  cursor: pointer;
+}
+
+.restore-tab-collection:hover {
+  text-decoration: underline;
+}
+
+.tabs-scroll-button {
+  visibility: hidden;
+  position: absolute;
+  margin-top: calc(var(--remove-tab-overlap) + var(--thumbnail-height) / 2 -
+      var(--scroll-button-height) / 2);
+  width: var(--scroll-button-width);
+  height: var(--scroll-button-height);
+  background: url(../images/scroll-arrow.svg)
+      var(--scroll-button-padding)/var(--scroll-button-image-width) no-repeat
+      var(--scroll-button-highlight);
+  border-radius: 4px;
+  z-index: 999;
+  transition: visibility 300ms;
+}
+
+.tab-collection-tabs-container:hover .tabs-scroll-button.scroll-visible {
+  visibility: visible;
+}
+
+.tabs-scroll-button.scroll-left {
+  left: 0;
+}
+
+.tabs-scroll-button.scroll-right {
+  transform: scaleX(-1);
+  right: 0;
+}
+
+.tab-collection-tabs {
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.tab-item {
+  display: block;
+  position: relative;
+  width: var(--thumbnail-width);
+  margin: var(--remove-tab-overlap) var(--remove-tab-overlap) 4px
+      var(--remove-tab-overlap);
+}
+
+.tab-link:any-link:hover .tab-thumbnail,
+.tab-link:any-link:focus .tab-thumbnail,
+.tab-link:any-link:active .tab-thumbnail {
+  box-shadow: var(--thumbnail-shadow-highlight);
+}
+
+.tab-thumbnail {
+  display: block;
+  margin: 0;
+  border-radius: 6px;
+  box-shadow: var(--thumbnail-shadow);
+  transition: box-shadow 150ms;
+}
+
+.tab-title {
+  font-size: var(--font-size-body-10);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  margin: calc(var(--favicon-overlap) + 2px) 0 0 0;
+}
+
+.tab-favicon {
+  position: absolute;
+  top: calc(var(--thumbnail-height) - var(--favicon-height) +
+       var(--favicon-overlap));
+  right: calc(-1 * var(--favicon-overlap));
+  width: var(--favicon-width);
+  height: var(--favicon-height);
+  padding: var(--favicon-padding);
+  background-color: var(--white-100);
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 1px var(--grey-90-a10);
+  cursor: pointer;
+}
+
+.remove-tab {
+  position: absolute;
+  top: calc(-1 * var(--remove-tab-overlap));
+  right: calc(-1 * var(--remove-tab-overlap));
+  width: var(--remove-tab-width);
+  height: var(--remove-tab-height);
+  background: url(../images/remove.svg)
+      var(--remove-tab-padding)/var(--remove-tab-image-width) no-repeat
+      var(--white-100);
+  border-radius: 100%;
+  box-shadow: var(--box-shadow-border);
+}

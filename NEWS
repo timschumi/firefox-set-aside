@@ -1,0 +1,14 @@
+News
+====
+
+Set Aside 2 (2018-12-13T14:07:17+01:00)
+---------------------------------------
+
+- Ensure browser action stays disabled on incognito tabs
+
+Set Aside 1 (2018-11-22T15:51:28+01:00)
+---------------------------------------
+
+- Replace tab list scroll bar with scroll buttons
+- Store favicons and thumbnails in local database
+- Initial revision

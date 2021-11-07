@@ -1,0 +1,16 @@
+<!--
+Copyright (C) 2018 Guido Berhoerster <guido+set-aside@berhoerster.name>
+
+This Source Code Form is subject to the terms of the Mozilla Public
+License, v. 2.0. If a copy of the MPL was not distributed with this
+file, You can obtain one at http://mozilla.org/MPL/2.0/.
+-->
+<svg version="1.1" viewBox="0 0 224 128" xmlns="http://www.w3.org/2000/svg">
+  <g fill="#ededf0">
+    <rect x="8" y="8" width="208" height="32" rx="4" ry="4"/>
+    <rect x="8" y="48" width="40" height="72" rx="4" ry="4"/>
+    <rect x="56" y="48" width="160" height="24" rx="4" ry="4"/>
+    <rect x="56" y="80" width="160" height="16" rx="4" ry="4"/>
+    <rect x="56" y="104" width="160" height="16" rx="4" ry="4"/>
+  </g>
+</svg>

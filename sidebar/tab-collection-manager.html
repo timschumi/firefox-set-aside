@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<!--
+   Copyright (C) 2018 Guido Berhoerster <guido+set-aside@berhoerster.name>
+
+   This Source Code Form is subject to the terms of the Mozilla Public
+   License, v. 2.0. If a copy of the MPL was not distributed with this
+   file, You can obtain one at http://mozilla.org/MPL/2.0/.
+-->
+    <script src="js/tab-collection-manager.js" defer></script>
+    <link rel="stylesheet" href="style/tab-collection-manager.css">
+  </head>
+  <body>
+    <template id="tab-collection-template">
+      <div class="tab-collection" data-tab-collection-uuid="">
+        <div class="tab-collection-header">
+          <h2 class="tab-collection-title"></h2>
+          <time class="tab-collection-ctime" datetime=""></time>
+        </div>
+        <ul class="tab-collection-actions">
+          <li><div class="restore-tab-collection" title=""></div></li>
+          <li><div class="remove-tab-collection" title=""></div></li>
+        </ul>
+        <div class="tab-collection-tabs-container">
+          <div class="tabs-scroll-button scroll-left scroll-invisible"></div>
+          <div class="tabs-scroll-button scroll-right scroll-invisible"></div>
+          <ul class="tab-collection-tabs">
+          </ul>
+        </div>
+      </div>
+    </template>
+    <template id="tab-item-template">
+      <li class="tab-item" data-tab-uuid="">
+        <a class="tab-link" href="" title="">
+          <figure>
+            <img class="tab-thumbnail" width="224" height="128"
+            src="images/thumbnail-placeholder.svg" alt="">
+            <figcaption class="tab-title"></figcaption>
+          </figure>
+          <img class="tab-favicon" width="32" height="32"
+          src="images/defaultFavicon.svg" alt="">
+        </a>
+        <div class="remove-tab" href="" title=""></div>
+      </li>
+    </template>
+    <div id="tab-collections"><!-- leave empty so that the :empty CSS selector
+    applies --></div>
+    <div id="message">
+    </div>
+  </body>
+</html>

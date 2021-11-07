@@ -1,0 +1,14 @@
+<!--
+Copyright (C) 2018 Guido Berhoerster <guido+set-aside@berhoerster.name>
+
+This Source Code Form is subject to the terms of the Mozilla Public
+License, v. 2.0. If a copy of the MPL was not distributed with this
+file, You can obtain one at http://mozilla.org/MPL/2.0/.
+-->
+<svg version="1.1" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" opacity=".8" stroke="#f9f9fa" stroke-width="1">
+    <path d="m6 11v1c0 1.1 0.89 2 2 2h4c1.1 0 2-0.89 2-2v-8c0-1.1-0.89-2-2-2h-4c-1.1 0-2 0.89-2 2v4" stroke-width="2"/>
+    <path d="m6 5.5h8"/>
+    <path d="m1.5 9.5h9m-9 0 2 2m-2-2 2-2" stroke-linecap="round"/>
+  </g>
+</svg>
